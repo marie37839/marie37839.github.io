@@ -8,9 +8,9 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-const N = 50;
+const N = 100;
 const particles = [];
-const radius = 10;
+const radius = 50;
 const maxSpeed = 200;
 
 for (let i = 0; i < N; i++) {
