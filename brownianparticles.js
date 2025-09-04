@@ -10,8 +10,8 @@ window.addEventListener('resize', resize);
 
 const N = 100;
 const particles = [];
-const radius = 50;
-const maxSpeed = 200;
+const radius = 15;
+const maxSpeed = 300;
 
 for (let i = 0; i < N; i++) {
   particles.push({
