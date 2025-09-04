@@ -23,20 +23,9 @@ for (let i = 0; i < N; i++) {
 }
 
 function velocityToColor(v) {
-  const minW = 400;
-  const maxW = 700;
   const vClamped = Math.min(v, maxSpeed);
-  const t = 1 - vClamped / maxSpeed;
-  const wavelength = maxW * t + minW * (1 - t);
-
-  let r, g, b;
-  if (wavelength >= 620) { r = 255; g = 0; b = 0; } // red
-  else if (wavelength >= 590) { r = 255; g = 255; b = 0; } // yellow
-  else if (wavelength >= 570) { r = 0; g = 255; b = 0; } // green
-  else if (wavelength >= 500) { r = 0; g = 255; b = 255; } // cyan
-  else if (wavelength >= 450) { r = 0; g = 0; b = 255; } // blue
-  else { r = 128; g = 0; b = 128; } // violet
-  return `rgb(${r},${g},${b})`;
+  const hue = (1 - vClamped / maxSpeed) * 0 + (vClamped / maxSpeed) * 270;
+  return `hsl(${hue}, 100%, 50%)`;
 }
 
 function collide(p1, p2) {
