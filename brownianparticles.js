@@ -8,7 +8,7 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-const N = 300;
+const N = 50;
 const particles = [];
 const radius = 10;
 const maxSpeed = 200;
@@ -50,7 +50,6 @@ function collide(p1, p2) {
     const dvy = p2.vy - p1.vy;
     const vn = dvx * nx + dvy * ny;
     if (vn < 0) {
-
       const damp = 0.8;
       const impulse = (1 + damp) * vn / 2;
       p1.vx += impulse * nx;
